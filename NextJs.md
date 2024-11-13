@@ -20,3 +20,37 @@ Additional Info
 
 - Tools like **Cloudinary, Shark.ai, or ImageKit**
   offer image optimization services that can integrate with your CloudFront distribution.
+
+**import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
+
+export default async function handler(req, res) {
+  try {
+    const { imagePath } = req.query;
+
+    // Ensure the image exists
+    const imageFullPath = path.join(process.cwd(), 'public', imagePath);
+
+    if (!fs.existsSync(imageFullPath)) {
+      return res.status(404).json({ error: 'Image not found' });
+    }
+
+    // Read and convert the image
+    const imageBuffer = fs.readFileSync(imageFullPath);
+
+    const webpImageBuffer = await sharp(imageBuffer)
+      .webp() // Convert to WebP
+      .toBuffer();
+
+    // Set appropriate headers for WebP image
+    res.setHeader('Content-Type', 'image/webp');
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+
+    res.status(200).send(webpImageBuffer);
+  } catch (error) {
+    console.error('Error converting image: ', error);
+    res.status(500).json({ error: 'Failed to convert image' });
+  }
+}
+**
