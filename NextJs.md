@@ -22,6 +22,7 @@ Additional Info
   offer image optimization services that can integrate with your CloudFront distribution.
 
 **
+
 import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
@@ -54,4 +55,5 @@ export default async function handler(req, res) {
     res.status(500).json({ error: 'Failed to convert image' });
   }
 }
+
 **
