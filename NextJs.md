@@ -2,7 +2,7 @@
 
 1. **Image Optimisation**
 
- Use Case Scenarios  
+    Use Case Scenarios  
 
 - **Public Profiles / Static Images:**
     If performance is a priority,
