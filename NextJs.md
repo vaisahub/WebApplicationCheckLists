@@ -2,7 +2,7 @@
 
 ### Image Optimisations 
 
-## Use Case Scenarios  
+# Use Case Scenarios  
 
 # Public Profiles / Static Images:
     If performance is a priority,
@@ -12,4 +12,4 @@
     If your images require authentication or are only visible to specific users,
     StorageImage might be simpler because it manages signed URLs and access controls directly with Amplify’s storage.
 
-## Most efficient way is to convert images and store them as 'webp' then if auth is required use 'StorageImage'
+# Most efficient way is to convert images and store them as 'webp' then if auth is required use 'StorageImage'
