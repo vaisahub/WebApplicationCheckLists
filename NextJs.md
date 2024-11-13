@@ -1,6 +1,6 @@
 Web Application Check Lists
 
-**Image Optimisation**
+***Image Optimisation***
 
  Use Case Scenarios  
 
