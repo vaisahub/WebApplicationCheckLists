@@ -21,7 +21,8 @@ Additional Info
 - Tools like **Cloudinary, Shark.ai, or ImageKit**
   offer image optimization services that can integrate with your CloudFront distribution.
 
-**import sharp from 'sharp';
+**
+import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
